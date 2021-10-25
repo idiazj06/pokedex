@@ -15,8 +15,8 @@ function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
             {'Copyright © '}
-            <Link color="inherit" to="https://github.com/idiazj06">
-                Amazonas
+            <Link color="inherit" to="https://github.com/idiazj06/pokedex">
+                Pokedex
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
