@@ -3,7 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -16,6 +15,7 @@ import { useForm } from '../Hooks/useForm'
 import { useDispatch } from 'react-redux'
 import { loginGoogle } from '../Actions/actionLogin';
 import {registroEmailPasswordNombre} from '../Actions/actionRegister'
+import {Link} from 'react-router-dom'
 
 
 function Copyright(props) {
@@ -42,7 +42,7 @@ const theme = createTheme({
     },
 });
 
-export default function Register(props) {
+export default function Register() {
     const dispatch = useDispatch();
 
     const [ values, handleInputChange, reset ,setValues ] = useForm({
@@ -65,11 +65,6 @@ export default function Register(props) {
 
     const handleGoogle = () => {
         dispatch(loginGoogle())
-    }
-
-    const handleLogin = () => {
-        props.setShowLogin(true)
-        props.setShowRegister(false)
     }
 
 
@@ -182,7 +177,7 @@ export default function Register(props) {
                         </Button>
 
                         <Grid container justifyContent="flex-end">
-                            <Link sx={{ cursor: "pointer" }} onClick={handleLogin}>
+                            <Link to="/auth/login" variant="body2" sx={{cursor:'pointer'}}>
                                 {"¿Tienes cuenta? Logueate"}
                             </Link>
                         </Grid>
